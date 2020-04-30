@@ -21,14 +21,14 @@ sudo ../bin/configtxgen -profile OneOrgOrdererGenesis -outputBlock ./config/gene
 sudo ../bin/configtxgen -profile OneOrgChannel -outputCreateChannelTx ./config/channel.tx -channelID mychannel
 cd crypto-config/peerOrganizations/org1.example.com/ca/
 key1=$(sudo ls| head -n 1)
-key2=$(sudo ls| head -n 1|tail -1)
+key2=$(sudo ls| head -n 2|tail -1)
 l1=${#key1}
 l2=${#key2}
 if [ $l1 -gt $l2 ]
 then
-  key=$key2
-else
   key=$key1
+else
+  key=$key2
 fi
 cd ..
 cd ..
