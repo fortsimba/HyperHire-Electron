@@ -10,6 +10,9 @@ sudo rm -rf ./hfc-key-store
 sudo rm -rf javascript/wallet
 sudo service docker restart
 # launch network; create channel and join peer to channel
+sudo chmod a+x bin/configtxgen
+sudo chmod a+x bin/cryptogen
+sudo chmod a+x basic-network/teardown.sh
 cd basic-network
 ./teardown.sh
 sudo rm -rf config
